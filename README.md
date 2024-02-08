@@ -18,7 +18,7 @@ WaterMello 是玄云海开发的一款简易的自定义版《合成大西瓜》
 
 ### 程序截图
 
-![](C:\Users\zhengwanlun\AppData\Roaming\marktext\images\2024-02-08-15-17-44-image.png)
+![](https://z4a.net/images/2024/02/08/2024-02-08-15-17-44-image.png)
 
 ### 用法
 
