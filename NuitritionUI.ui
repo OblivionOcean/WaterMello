@@ -14,7 +14,8 @@
    <string>WaterMello</string>
   </property>
   <property name="windowIcon">
-   <iconset theme="face-angel"/>
+   <iconset>
+    <normaloff>icon.ico</normaloff>icon.ico</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="Opener">
