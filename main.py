@@ -16,7 +16,7 @@ from http.server import ThreadingHTTPServer
 import threading
 
 
-def start_thread(name, kwargs):
+def start_thread(name, kwargs={}):
     thread = threading.Thread(target=name, kwargs=kwargs)
     thread.setDaemon(True)
     thread.start()
@@ -162,7 +162,6 @@ class MainWindow(QMainWindow):
                 img = cv2.resize(img, (comparison[x], comparison[x]))
                 cv2.imwrite(places[x], img)
         start_thread(go)
-        QMessageBox.information(self, "成功", "生成完毕！")
     
     def showAbout(self):
         QMessageBox.information(self, "关于","""
