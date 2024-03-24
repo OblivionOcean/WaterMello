@@ -14,7 +14,15 @@ from http.server import CGIHTTPRequestHandler
 from functools import partial
 from http.server import ThreadingHTTPServer
 import threading
+import mimetypes
 
+mimetypes.init()
+def get_extensions_for_type(general_type):
+    for ext in mimetypes.types_map:
+        if mimetypes.types_map[ext].split('/')[0] == general_type:
+            yield ext
+
+ext = tuple(get_extensions_for_type('image'))
 
 def start_thread(name, kwargs={}):
     thread = threading.Thread(target=name, kwargs=kwargs)
@@ -30,7 +38,6 @@ class DualStackServer(ThreadingHTTPServer):
             self.socket.setsockopt(socket.IPPROTO_IPV6, socket.IPV6_V6ONLY, 0)
         return super().server_bind()
 
-ext = ['.exr', '.webp', '.rgb', '.gif', '.pbm', '.pgm', '.ppm', '.tiff', '.rast', '.xbm', '.jpeg', '.bmp', '.png', '.webp', '.exr', '.jpg']
 comparison = [52, 80, 108, 119, 153, 183, 193, 258, 308, 309, 408]
 places = [
     "./ready/res/raw-assets/ad/ad16ccdc-975e-4393-ae7b-8ac79c3795f2.png",
